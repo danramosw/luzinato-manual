@@ -65,6 +65,37 @@ body {
     background-color: var(--background-dark);
 }
 
+.pdf-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--primary-orange);
+    color: var(--background-dark);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pdf-button:hover {
+    background-color: #FFB730;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-button i {
+    font-size: 20px;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -498,11 +529,18 @@ footer {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-logo {
     max-width: 150px;
     margin-bottom: 1rem;
+}
+
+.designer-credit {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Logo Introduction Section */
