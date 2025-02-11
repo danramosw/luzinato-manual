@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <button id="generatePDF" class="pdf-button">
-        <i class='bx bxs-file-pdf'></i>
-        Gerar PDF
-    </button>
     <header class="hero">
         <div class="container">
             <div class="hero-content">
@@ -195,19 +190,6 @@
         AOS.init({
             duration: 800,
             once: true
-        });
-
-        document.getElementById('generatePDF').addEventListener('click', function() {
-            const element = document.getElementById('content');
-            const opt = {
-                margin: 1,
-                filename: 'manual-marca-luzinato.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
-            };
-
-            html2pdf().set(opt).from(element).save();
         });
     </script>
 </body>
