@@ -1,0 +1,753 @@
+:root {
+    --primary-orange: #FFA600;
+    --dark-bg: #191914;
+    --white: #ffffff;
+    --text-color: rgba(255, 255, 255, 0.8);
+    --primary-black: #E6E6E6;
+    --background-dark: #191914;
+    --dark-gray: #333333;
+}
+
+@font-face {
+    font-family: 'KUGILE';
+    src: url('fonts/KUGILE.woff2') format('woff2'),
+         url('fonts/KUGILE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url('fonts/MarkPro-Light.woff2') format('woff2'),
+         url('fonts/MarkPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url('fonts/MarkPro-Regular.woff2') format('woff2'),
+         url('fonts/MarkPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url('fonts/MarkPro-Medium.woff2') format('woff2'),
+         url('fonts/MarkPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url('fonts/MarkPro-Bold.woff2') format('woff2'),
+         url('fonts/MarkPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mark Pro', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--white);
+    background-color: var(--background-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: url('assets/fundo-hero.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(25, 25, 20, 0.9), rgba(25, 25, 20, 0.7));
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.title-spaced {
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 500;
+    opacity: 0.9;
+    margin: 0;
+    padding-top: 2rem;
+}
+
+.hero-logo {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-logo img {
+    width: 100%;
+    height: 300px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.slogan {
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 300;
+    opacity: 0.8;
+    margin: 0;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.slogan::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--primary-orange);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.download-btn {
+    background: var(--primary-orange);
+    color: var(--dark-bg);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 166, 0, 0.2);
+}
+
+.download-btn i {
+    font-size: 1.25rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .title-spaced {
+        font-size: 0.5rem;
+        letter-spacing: 0.15em;
+    }
+
+    .hero-logo {
+        max-width: 1200px;
+    }
+
+    .slogan {
+        font-size: 1rem;
+    }
+}
+
+.section {
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-orange), transparent);
+}
+
+h2 {
+    font-family: 'KUGILE', 'Mark Pro', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-orange);
+    letter-spacing: 1px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+}
+
+.brand-elements {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    margin-bottom: 4rem;
+}
+
+.logo-variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.logo-variant {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.logo-variant:hover {
+    transform: translateY(-5px);
+}
+
+.logo-variant img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.logo-variant:hover img {
+    transform: scale(1.05);
+}
+
+.logo-variant p {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.color-palette {
+    margin-bottom: 4rem;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.color-box {
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-box span:last-child {
+    font-family: monospace;
+    margin-top: 0.5rem;
+}
+
+.typography {
+    text-align: center;
+}
+
+.font-samples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.font-sample {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.font-sample h4 {
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kugile {
+    font-family: 'KUGILE', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.markpro-example {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.markpro-example p {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--white);
+    line-height: 1;
+}
+
+.weight-light {
+    font-family: 'Mark Pro' !important;
+    font-weight: 300 !important;
+    font-style: normal;
+}
+
+.weight-regular {
+    font-family: 'Mark Pro' !important;
+    font-weight: 400 !important;
+    font-style: normal;
+}
+
+.weight-medium {
+    font-family: 'Mark Pro' !important;
+    font-weight: 500 !important;
+    font-style: normal;
+}
+
+.weight-bold {
+    font-family: 'Mark Pro' !important;
+    font-weight: 700 !important;
+    font-style: normal;
+}
+
+.font-name {
+    color: var(--primary-orange);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.application-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.application-card i {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+    background: rgba(255, 166, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.application-card h3 {
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.application-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.application-image {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.application-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.application-card:hover .application-image img {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+/* Logo Introduction Section */
+.logo-intro {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6rem 0;
+}
+
+.logo-story {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-story-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 300;
+}
+
+.logo-features {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.feature {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature i {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 0.75rem;
+}
+
+.feature-text h3 {
+    color: var(--white);
+    font-family: 'Mark Pro', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.logo-preview {
+    position: sticky;
+    top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+}
+
+.concept-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .logo-story {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+    
+    .logo-preview {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-intro {
+        padding: 3rem 0;
+    }
+    
+    .logo-story-content {
+        padding: 1.5rem;
+    }
+    
+    .feature {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .section {
+        padding: 4rem 1rem;
+    }
+    
+    .font-samples {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body {
+        background: #191914 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .download-btn {
+        display: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 40px !important;
+    }
+
+    .logo-story {
+        grid-template-columns: 1fr !important;
+    }
+
+    .logo-preview {
+        margin-top: 30px !important;
+    }
+}
+
+/* PDF Generation Styles */
+.pdf-clone {
+    background-color: #191914 !important;
+    color: var(--white) !important;
+    font-family: 'Mark Pro', Arial, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.pdf-clone * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.pdf-clone .section {
+    padding: 40px 20px !important;
+    margin: 0 !important;
+    page-break-inside: avoid !important;
+}
+
+.pdf-clone .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.pdf-clone img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.pdf-clone .logo-story {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+}
+
+.pdf-clone .feature {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.pdf-clone .download-btn {
+    display: none !important;
+}
+
+/* Print styles for browser printing */
+@media print {
+    body {
+        background: #191914 !important;
+        color: var(--white) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    section {
+        page-break-inside: avoid !important;
+        padding: 40px 20px !important;
+        margin: 0 !important;
+    }
+
+    .download-btn {
+        display: none !important;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    nav {
+        margin-bottom: 2rem;
+    }
+
+    .title-spaced {
+        font-size: 1.2rem;
+        letter-spacing: 0.15em;
+    }
+
+    .hero-logo {
+        max-width: 600px;
+    }
+
+    .download-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
